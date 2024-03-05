@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import MemesCard from './MemesCard';
+import Shimmer from './shimmer/Shimmer';
 
 const Body = () => {
-  const[items, setItems] = useState([]);
+  const[items, setItems] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -17,11 +19,13 @@ const Body = () => {
     
   }
   return (
+   
     <div className="flex flex-wrap">
-      {items.map((item,i) => (
+      {!items ? <Shimmer /> : items.map((item,i) => (
      <MemesCard key={i} data={item} />
     ))}
     </div>
+    
   )
 }
 
