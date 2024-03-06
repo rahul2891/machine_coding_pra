@@ -1,7 +1,9 @@
 import React from 'react'
 import SelectBox from './SelectBox'
+import { useLocation } from 'react-router-dom'
 
 const Navbar = () => {
+  const location = useLocation();
   return (
     <div className="flex justify-around">
     <nav className="px-20 m-2 w-[600px] text-lg flex justify-between">
@@ -11,7 +13,7 @@ const Navbar = () => {
     <a href="/team">Team</a>
     <a href="/accordion">Accordion</a>
   </nav>
-    <SelectBox />
+    {location.pathname === '/about' && <SelectBox />}
 
     </div>
     

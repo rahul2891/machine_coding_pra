@@ -15,7 +15,7 @@ function App() {
 
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
-   <Header />
+   
 
    {/* // create a wrapper for protected routes
    // create a empty route and load protectedRoute component
@@ -23,6 +23,7 @@ function App() {
    // authentication logic will go in protectedRoute component */}
 
     <BrowserRouter>
+    <Header />
     <Routes>
       <Route path="/" element={<Body />}></Route>
       <Route element={<ProtectedRoute />}>
