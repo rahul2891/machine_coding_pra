@@ -7,10 +7,14 @@ import Team from './components/Team'
 import Accordion from './components/accordion/Accordion'
 import Header from './components/header/Header'
 import ProtectedRoute from './components/protectedRoutes/ProtectedRoute'
+import { LanguageContext } from './components/LanguageContext'
+import { useState } from 'react'
 
 function App() {
+  const [lang, setLang] = useState('en');
+
   return (
-    <>
+    <LanguageContext.Provider value={{ lang, setLang }}>
    <Header />
 
    {/* // create a wrapper for protected routes
@@ -22,7 +26,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Body />}></Route>
       <Route element={<ProtectedRoute />}>
-      <Route path="/about" element={<About />}></Route>
+      <Route path="/about" element={<About lang={lang} />}></Route>
 
       </Route>
       <Route path="/login" element={<Login />}></Route>
@@ -30,7 +34,7 @@ function App() {
       <Route path="/accordion" element={<Accordion />}></Route>
       </Routes>
     </BrowserRouter>
-    </>
+    </LanguageContext.Provider>
   )
 }
 

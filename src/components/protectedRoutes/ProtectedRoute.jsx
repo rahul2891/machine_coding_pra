@@ -2,7 +2,7 @@ import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom';
 
 const ProtectedRoute = ({children}) => {
-    const isAuthenticated = false;
+    const isAuthenticated = true;
 
 // can you render these children like this? no you cannot why? because you are not passing the children as props to the protectedRoute component
 // you need to create an Outlet component and pass the children to the outlet component
