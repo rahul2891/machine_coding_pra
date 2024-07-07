@@ -9,6 +9,9 @@ import Header from './components/header/Header'
 import ProtectedRoute from './components/protectedRoutes/ProtectedRoute'
 import { LanguageContext } from './components/LanguageContext'
 import { useState } from 'react'
+import Uber from './components/uber/Uber'
+import Meta from './components/meta/Meta'
+import Atlassian from './components/atlassian/Atlassian'
 
 function App() {
   const [lang, setLang] = useState('en');
@@ -33,6 +36,10 @@ function App() {
       <Route path="/login" element={<Login />}></Route>
       <Route path="/team" element={<Team />}></Route>
       <Route path="/accordion" element={<Accordion />}></Route>
+      <Route path="/uber" element={<Uber />}></Route>
+      <Route path="/meta" element={<Meta />}></Route>
+      <Route path="/atlassian" element={<Atlassian />}></Route>
+
       </Routes>
     </BrowserRouter>
     </LanguageContext.Provider>

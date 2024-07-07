@@ -30,3 +30,5 @@ const Body = () => {
 }
 
 export default Body
+
+//A Higher-Order Component (HOC) in React is a pattern used to share common functionality between components without repeating the code.
